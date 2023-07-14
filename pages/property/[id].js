@@ -15,12 +15,12 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
       <Flex paddingTop='2' alignItems='center'>
         <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
         <Text fontWeight='bold' fontSize='lg'>
-          AED {price} {rentFrequency && `/${rentFrequency}`}
+          KSH {price} {rentFrequency && `/ ${rentFrequency}`}
         </Text>
         <Spacer />
         <Avatar size='sm' src={agency?.logo?.url}></Avatar>
       </Flex>
-      <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
+      <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='green.400'>
         {rooms}<FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
       </Flex>
     </Box>
@@ -30,17 +30,17 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
     </Box>
     <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
       <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
-        <Text>Type</Text>
-        <Text fontWeight='bold'>{type}</Text>
+        <Text fontWeight='bold'>Type</Text>
+        <Text>{type}</Text>
       </Flex>
       <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
-        <Text>Purpose</Text>
-        <Text fontWeight='bold'>{purpose}</Text>
+        <Text fontWeight='bold'>Purpose</Text>
+        <Text>{purpose}</Text>
       </Flex>
       {furnishingStatus && (
         <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3' >
-          <Text>Furnishing Status</Text>
-          <Text fontWeight='bold'>{furnishingStatus}</Text>
+          <Text fontWeight='bold'>Furnishing Status</Text>
+          <Text> {furnishingStatus}</Text>
         </Flex>
       )}
     </Flex>
@@ -49,7 +49,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
         <Flex flexWrap='wrap'>
           {amenities?.map((item) => (
               item?.amenities?.map((amenity) => (
-                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
+                <Text key={amenity.text} fontWeight='bold' color='green.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
                   {amenity.text}
                 </Text>
               ))
